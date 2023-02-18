@@ -1,38 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap");
+
+/* font-family: 'Play', sans-serif; */
+
+/* App */
 .App {
-  text-align: center;
+  font-family: "Play", sans-serif;
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: grey 0 0 10px 10px;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Header */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header {
   display: flex;
-  flex-direction: column;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: black;
+}
+
+.Header h3 {
+  padding-left: 50px;
+  font-size: 24px;
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Header .cate-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 50px;
+  width: 30%;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Header .cate-wrapper > div:hover {
+  cursor: pointer;
+  color: lightpink;
+}
+
+/* Home */
+
+.Home img {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* ItemList */
+
+.ItemList {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Item */
+
+.Item {
+  text-align: center;
+  box-sizing: border-box;
+  width: 30%;
+  margin: 20px;
+  border: 0.1px solid #eeeeee;
+  border-radius: 4px;
+  padding: 30px;
+  box-shadow: #eeeeee 0 0 8px 8px;
+  cursor: pointer;
+}
+
+.Item:hover {
+  box-shadow: #bbbbbb 0 0 8px 8px;
 }

@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import "./App.css";
+
+import Home from "./pages/Home";
+import initData from "./utils/initData";
+
+export const dataContext = createContext();
 
 function App() {
+  useEffect(() => {
+    setData(initData);
+  }, []);
+
+  const [data, setData] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <dataContext.Provider value={data}>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+          </Routes>
+        </div>
+      </dataContext.Provider>
+    </BrowserRouter>
   );
 }
 
