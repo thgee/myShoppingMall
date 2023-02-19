@@ -14,30 +14,88 @@
 /* Header */
 
 .Header {
+  position: fixed;
+  width: 70%;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   background-color: black;
 }
 
-.Header h3 {
+.Header > h3 {
   padding-left: 50px;
+  flex-grow: 0.1;
   font-size: 24px;
   cursor: pointer;
   color: white;
 }
 
 .Header .cate-wrapper {
+  flex-grow: 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   margin-left: 50px;
   width: 30%;
   color: white;
 }
 
+.Header .cate-wrapper > div {
+  margin: 0 30px;
+}
+
 .Header .cate-wrapper > div:hover {
   cursor: pointer;
   color: lightpink;
+}
+
+.Header .barIcon {
+  flex-grow: 0.1;
+  font-size: 30px;
+  color: white;
+  z-index: 1;
+}
+.Header .barIcon:hover {
+  cursor: pointer;
+  color: lightpink;
+}
+
+/* Sidebar */
+
+.Sidebar {
+  position: fixed;
+  top: 30px;
+  bottom: 100px;
+  right: -30%;
+  width: 230px;
+  background-color: #ddd;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.Sidebar.open {
+  right: 20%;
+  opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px;
+}
+
+.Sidebar h3 {
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+  font-size: 35px;
+  text-align: center;
+}
+.Sidebar .sidebar-cate-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-left: 10px;
+}
+
+.Sidebar .sidebar-cate-wrapper > div {
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
 }
 
 /* Home */
@@ -61,15 +119,20 @@
 .Item {
   text-align: center;
   box-sizing: border-box;
-  width: 30%;
+  width: 28%;
   margin: 20px;
   border: 0.1px solid #eeeeee;
   border-radius: 4px;
   padding: 30px;
   box-shadow: #eeeeee 0 0 8px 8px;
   cursor: pointer;
+  margin-bottom: 100px;
 }
 
 .Item:hover {
   box-shadow: #bbbbbb 0 0 8px 8px;
+}
+
+.Item img {
+  margin-bottom: 0;
 }

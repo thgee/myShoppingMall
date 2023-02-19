@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import Temp from "./Temp";
 import "./App.css";
 
 import Home from "./pages/Home";
@@ -18,6 +18,11 @@ function App() {
     <BrowserRouter>
       <dataContext.Provider value={data}>
         <div className="App">
+          {/* --------------------------------- */}
+          <Temp />
+
+          {/* --------------------------------- */}
+
           <Routes>
             <Route path="/" element={<Home />}></Route>
           </Routes>
